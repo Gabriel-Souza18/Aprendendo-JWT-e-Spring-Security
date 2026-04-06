@@ -12,12 +12,12 @@ import java.util.UUID;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-
+@Entity
 @Table(name = "tb_usuarios")
 public class Usuario {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private UUID Id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long Id;
     @Column(unique = true)
     private String nickname;
     private String senha;

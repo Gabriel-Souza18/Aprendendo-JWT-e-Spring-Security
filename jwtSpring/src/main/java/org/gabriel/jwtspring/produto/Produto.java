@@ -1,7 +1,6 @@
 package org.gabriel.jwtspring.produto;
 
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,9 +10,12 @@ import org.gabriel.jwtspring.usuario.Usuario;
 @Getter
 @AllArgsConstructor
 @Table(name = "tb_posts")
+@Entity
 public class Produto {
     @Id
-    private String id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+
+    private Long id;
     private String nome;
     private float preco;
 
